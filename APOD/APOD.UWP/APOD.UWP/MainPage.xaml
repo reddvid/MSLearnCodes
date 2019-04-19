@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="APOD.UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:APOD.UWP"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid Padding="24" LostFocus="Grid_LostFocus">
+        <StackPanel HorizontalAlignment="Left" Spacing="24">
+            <CalendarDatePicker x:Name="MonthCalendar" VerticalAlignment="Top" Width="280" DateChanged="MonthCalendar_DateChanged"/>
+            <Button x:Name="LaunchButton" Content="Go to APOD launch date" Click="LaunchButton_Click" />
+            <Border BorderBrush="Black" BorderThickness="1">
+                <StackPanel Padding="24">
+                    <CheckBox x:Name="ShowTodaysImageCheckBox" Content="Show today's image on start up" />
+                    <CheckBox x:Name="LimitRangeCheckBox" Content="Limit range to current year" Checked="LimitRangeCheckBox_Checked" Unchecked="LimitRangeCheckBox_Unchecked"/>
+                    <StackPanel Orientation="Horizontal" Spacing="24">
+                        <TextBlock Text="Images downloaded today:" />
+                        <TextBox
+                            x:Name="ImagesTodayTextBox"
+                            Background="#FFFFC0"
+                            IsReadOnly="True" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <TextBox
+                x:Name="ImageCopyrightTextBox"
+                Width="280"
+                Background="#FFFFC0"
+                Header="Image Credit and Copyright:"
+                IsReadOnly="True" />
+
+            <TextBox
+                x:Name="DescriptionTextBox"
+                Width="280"
+                Height="400"
+                Background="#FFFFC0"
+                Header="Description:"
+                IsReadOnly="True"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        
+        <Border
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                BorderBrush="Black"
+                BorderThickness="1">
+            <Image x:Name="ImagePictureBox" Height="600" Width="800"/>
+        </Border>
+    </Grid>
+</Page>

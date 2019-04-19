@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="Calculator.Uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Calculator.Uwp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel
+            x:Name="CalculationGrid"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+            <TextBox
+                x:Name="FirstNumberBox"
+                Width="220"
+                HorizontalAlignment="Center"
+                FontFamily="Consolas"
+                PlaceholderText="Enter first number"
+                TextAlignment="Center"
+                TextChanged="FirstNumberBox_TextChanged" />
+
+            <StackPanel
+                Margin="10"
+                HorizontalAlignment="Center"
+                Spacing="-5">
+                <RadioButton
+                    Checked="RadioButton_Checked"
+                    Content="Add"
+                    GroupName="MathOperator"
+                    IsChecked="True" />
+                <RadioButton
+                    Checked="RadioButton_Checked"
+                    Content="Subtract"
+                    GroupName="MathOperator" />
+                <RadioButton
+                    Checked="RadioButton_Checked"
+                    Content="Multiply"
+                    GroupName="MathOperator" />
+                <RadioButton
+                    Checked="RadioButton_Checked"
+                    Content="Divide"
+                    GroupName="MathOperator" />
+            </StackPanel>
+
+            <TextBox
+                x:Name="SecondNumberBox"
+                Width="220"
+                HorizontalAlignment="Center"
+                FontFamily="Consolas"
+                IsReadOnly="True"
+                PlaceholderText="Use Slider for 2nd number"
+                TextAlignment="Center"
+                TextChanged="SecondNumberBox_TextChanged" />
+
+            <Slider
+                x:Name="SecondNumberSlider"
+                Width="220"
+                Maximum="10"
+                Minimum="-10"
+                StepFrequency="0.01"
+                ValueChanged="SecondNumberSlider_ValueChanged" />
+
+            <CheckBox
+                x:Name="IncludeDateCheckBox"
+                HorizontalAlignment="Center"
+                Checked="IncludeDateCheckBox_Checked"
+                Content="Include Date and Time in results"
+                Unchecked="IncludeDateCheckBox_Unchecked" />
+
+            <DatePicker
+                x:Name="CalculationDatePicker"
+                Margin="0,0,0,10"
+                HorizontalAlignment="Stretch"
+                Visibility="Collapsed" />
+
+            <Button
+                x:Name="EqualsButton"
+                Margin="0,10"
+                HorizontalAlignment="Stretch"
+                Click="EqualsButton_Click"
+                Content="Calculate Results" />
+
+            <TextBlock
+                x:Name="ResultsTextBlock"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="Consolas"
+                FontSize="22"
+                FontWeight="Bold"
+                Text="---" />
+
+        </StackPanel>
+    </Grid>
+</Page>

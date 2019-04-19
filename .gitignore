@@ -1,0 +1,10 @@
+**/bin
+**/obj
+**/*.pfx
+**/.vs
+**/*.appxmanifest
+**/.git
+**/Debug
+**/Release
+APOD/APOD.UWP/APOD.UWP/obj/x86/Debug/APOD.UWP.csprojAssemblyReference.cache
+APOD/APOD.UWP/APOD.UWP/obj/x86/Debug/XamlSaveStateFile.xml
